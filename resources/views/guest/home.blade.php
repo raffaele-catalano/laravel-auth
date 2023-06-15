@@ -4,9 +4,6 @@
 
 <div class="jumbotron">
     <div class="container my-3">
-        <div class="logo d-flex justify-content-center">
-            <img src="/logo.png" alt="logo">
-        </div>
         <h1 class="text-center fw-bold my-4">
             Welcome to Boolfolio
         </h1>
