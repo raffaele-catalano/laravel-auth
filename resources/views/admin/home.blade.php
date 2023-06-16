@@ -1,11 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="container">
-        <h2 class="fs-4 text-secondary my-4">
-            <h3>Projects</h3>
-        </h2>
-        <div class="row justify-content-center">
+<div class="container">
+    <h3>Dashboard</h3>
+    <div class="row justify-content-center">
         <div class="col">
             <div class="card">
                 <div class="card-header">{{ __('User Dashboard') }}</div>
@@ -22,6 +20,5 @@
             </div>
         </div>
     </div>
-
-    </div>
+</div>
 @endsection
