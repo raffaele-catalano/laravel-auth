@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h3 class="text-center mt-3">Add a New Project</h3>
+    <h3 class="text-center mt-3"><span class="text-primary">Editing:</span> {{ $project->name }}</h3>
         <div class="container">
 
             @if ($errors->any())

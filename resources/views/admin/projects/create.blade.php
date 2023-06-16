@@ -37,15 +37,13 @@
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea
-                    cols="30"
-                    rows="10"
-                    id="description"
-                    class="form-control @error('description') is-invalid @enderror"
-                    name="description"
-                    placeholder="Description"
-                    type="text">
-                    {{old('description')}}
-                    </textarea>
+                        cols="30"
+                        rows="10"
+                        id="description"
+                        class="form-control @error('description') is-invalid @enderror"
+                        name="description"
+                        placeholder="Description"
+                        type="text">{{old('description')}}</textarea>
                         @error('description')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
