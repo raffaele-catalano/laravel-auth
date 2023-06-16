@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h3 class="text-center mt-3">Projects:</h3>
+    <h3 class="text-center mt-3">Projects</h3>
         <div class="container d-flex flex-column align-items-center">
             <table class="table table-striped table-hover w-75">
                 <thead>
