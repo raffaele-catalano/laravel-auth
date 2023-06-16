@@ -32,16 +32,21 @@
                                     class="fa-solid fa-eye fa-lg"></i></a>
                             <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning"><i
                                     class="fa-solid fa-pencil fa-lg"></i></a>
-                            <form action="{{ route('admin.projects.destroy', $project) }}" method="POST"
-                                class="d-inline ms-1"
-                                onsubmit="return confirm('The project -> {{ $project->name }} will be deleted, are you sure?')">
 
+                            <form
+                                action="{{ route('admin.projects.destroy', $project) }}"
+                                method="POST"
+                                class="d-inline"
+                                onsubmit="return confirm('The project -> {{ $project->name }} will be deleted, are you sure?')">
                                 @csrf
                                 @method('DELETE')
 
-                                <button type="submit" class="btn btn-danger fw-bold"><i
-                                        class="fa-solid fa-trash-can fa-lg"></i></button>
+                                <button type="submit" class="btn btn-danger fw-bold">
+                                    <i class="fa-solid fa-trash-can fa-lg"></i>
+                                </button>
+
                             </form>
+
                         </td>
                     </tr>
                 @endforeach
