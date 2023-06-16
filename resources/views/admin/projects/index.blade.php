@@ -19,7 +19,7 @@
                         <td>{{ $project->name }}</td>
                         <td>{{ $project->category }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary"><i class="fa-solid fa-eye fa-lg"></i></a>
+                            <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary"><i class="fa-solid fa-eye fa-lg"></i></a>
                             <a href="#" class="btn btn-warning"><i class="fa-solid fa-pencil fa-lg"></i></a>
                             <a href="#" class="btn btn-danger"><i class="fa-solid fa-trash-can fa-lg"></i></a>
                         </td>
