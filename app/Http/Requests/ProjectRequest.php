@@ -27,10 +27,10 @@ class ProjectRequest extends FormRequest
             'name'          => 'required|min:4|max:255',
             'description'   => 'min:10',
             'category'      => 'required|min:4|max:255',
-            'start_date'    => 'required|date_format:Y-m-d|min:3|max:255',
-            'end_date'      => 'date_format:Y-m-d|min:3|max:255',
+            'start_date'    => 'required|date_format:Y-m-d|max:10',
+            'end_date'      => 'nullable|date_format:Y-m-d|max:255',
             // 'is_closed',
-            'slug'
+            // 'slug'
         ];
     }
 }
