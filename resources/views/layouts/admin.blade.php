@@ -18,20 +18,31 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     {{-- Font-Awesome --}}
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css' integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==' crossorigin='anonymous'/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css'
+        integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw=='
+        crossorigin='anonymous' />
 
     <!-- Usando Vite -->
-    @vite(['resources/js/app.js'])
+    @vite(['resources/scss/admin.scss', 'resources/js/admin.js'])
 </head>
 
 <body>
 
-    @include('admin.partials.header')
 
     <div id="app">
 
+        @include('admin.partials.header')
+
         <main>
-            @yield('content')
+            <div class="main-wrapper @auth d-flex @endauth">
+                @auth
+                    @include('admin.partials.aside')
+                @endauth
+
+                <div class="main-view w-100 overflow-auto">
+                    @yield('content')
+                </div>
+            </div>
         </main>
     </div>
 </body>
