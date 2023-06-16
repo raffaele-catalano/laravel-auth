@@ -9,6 +9,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col">Category</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -17,7 +18,8 @@
                     <tr>
                         <td>{{ $project->id }}</td>
                         <td>{{ $project->name }}</td>
-                        <td>{{ $project->category }}</td>
+                        <td class="text-capitalize">{{ $project->category }}</td>
+                        <td>{{ $project->is_closed ? 'Closed' : 'Ongoing' }}</td>
                         <td>
                             <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-primary"><i class="fa-solid fa-eye fa-lg"></i></a>
                             <a href="#" class="btn btn-warning"><i class="fa-solid fa-pencil fa-lg"></i></a>
