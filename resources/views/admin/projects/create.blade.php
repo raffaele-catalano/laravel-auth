@@ -15,7 +15,7 @@
             </div>
             @endif
 
-            <form action="{{ route('admin.projects.store') }}" method="POST">
+            <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
 
                 @csrf
 
@@ -47,6 +47,28 @@
                         @error('description')
                             <p class="text-danger">{{ $message }}</p>
                         @enderror
+                </div>
+
+                {{-- <div class="input-group mb-3">
+                    <input
+                    class="form-control mb-3"
+                    onchange="showImage(event)"
+                    id="image"
+                    name="image"
+                    type="file"
+                    >
+
+                    <div>
+                        <img id="preview-image" src="" alt="" width="150">
+                    </div>
+                </div> --}}
+
+                <div class="mb-1">
+                    <label for="image" class="form-label">Upload Image</label>
+                    <input type="file" class="form-control" onchange="showImage(event)" id="image" name="image" aria-describedby="upload" aria-label="Upload">
+                    <div>
+                        <img id="preview-image" class="mt-2" src="" alt="" width="150">
+                    </div>
                 </div>
 
                 <div class="mb-3">
@@ -120,6 +142,14 @@
                 .catch( error => {
                     console.error( error );
                 } );
+
+                function showImage(event){
+                    const tagImage = document.getElementById('preview-image');
+                    tagImage.src = URL.createObjectURL(event.target.files[0])
+
+                    console.log(event.target.files[0]);
+                    console.log(URL.createObjectURL(event.target.files[0]));
+                }
         </script>
 
 @endsection
