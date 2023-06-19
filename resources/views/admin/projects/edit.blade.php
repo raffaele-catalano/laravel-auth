@@ -58,7 +58,7 @@
                     <label for="image" class="form-label">Upload Image</label>
                     <input type="file" class="form-control" onchange="showImage(event)" id="image" name="image" aria-describedby="upload" aria-label="Upload">
                     <div>
-                        <img id="preview-image" class="mt-2" src="" alt="" width="150">
+                        <img id="preview-image" class="mt-2" src="{{ asset('storage/' . $project->image_path) }}" alt="" width="150">
                     </div>
                 </div>
 
