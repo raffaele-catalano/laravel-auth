@@ -35,7 +35,7 @@ class Project extends Model
         'category',
         'start_date',
         'end_date',
-        // 'is_closed',
+        'is_closed',
         'slug'
     ];
 }
