@@ -33,7 +33,8 @@
                             <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning"><i
                                     class="fa-solid fa-pencil fa-lg"></i></a>
 
-                            <form
+                            @include('admin.partials.delete-form')
+                            {{-- <form
                                 action="{{ route('admin.projects.destroy', $project) }}"
                                 method="POST"
                                 class="d-inline"
@@ -45,7 +46,7 @@
                                     <i class="fa-solid fa-trash-can fa-lg"></i>
                                 </button>
 
-                            </form>
+                            </form> --}}
 
                         </td>
                     </tr>
