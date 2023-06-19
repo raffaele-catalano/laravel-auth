@@ -22,7 +22,7 @@
     </div>
     <div class="container d-flex justify-content-center">
         <a href="{{ route('admin.projects.index') }}" class="btn btn-primary mx-2">
-            Back to Dashboard
+            Back to Projects
         </a>
     </div>
 

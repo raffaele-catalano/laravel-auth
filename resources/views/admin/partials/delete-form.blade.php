@@ -10,14 +10,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 class="modal-title fs-5 text-danger" id="exampleModalLabel">Alert!</h2>
+                <h2 class="modal-title fs-5 text-danger fw-bold" id="exampleModalLabel">Wait a Minute!</h2>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                The project -> "{{ $project->name }}" <- will be deleted, are you sure?
+                The project "<span class="fw-bold text-primary">{{ $project->name }}</span>" will be <span class="text-danger">deleted</span>, are you sure?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Back</button>
+                <button type="button" class="btn btn-secondary fw-bold" data-bs-dismiss="modal">Back</button>
                 <form
                     action="{{ route('admin.projects.destroy', $project) }}"
                     method="POST"
