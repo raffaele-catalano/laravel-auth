@@ -13,7 +13,17 @@
         <table class="table table-striped table-hover w-75">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
+                    <th scope="col" class="text-center">
+                        <a class="text-black text-decoration-none"
+                            href="{{ route('admin.orderBy', ['direction' => $direction]) }}">
+                            <span>#id</span>
+                            @if ($direction === 'asc')
+                                <i class="fa-solid fa-chevron-up fa-xs"></i>
+                            @else
+                                <i class="fa-solid fa-chevron-down fa-xs"></i>
+                            @endif
+                        </a>
+                    </th>
                     <th scope="col">Name</th>
                     <th scope="col">Category</th>
                     <th scope="col">Status</th>
@@ -23,7 +33,7 @@
             <tbody>
                 @foreach ($projects as $project)
                     <tr>
-                        <td>{{ $project->id }}</td>
+                        <td class="text-center">{{ $project->id }}</td>
                         <td>{{ $project->name }}</td>
                         <td class="text-capitalize">{{ $project->category }}</td>
                         <td>{{ $project->is_closed ? 'Closed' : 'Ongoing' }}</td>
@@ -53,7 +63,7 @@
                 @endforeach
             </tbody>
         </table>
-        <div>
+        <div class="d-flex justify-content-center w-75 my-2">
             {{ $projects->links() }}
         </div>
     </div>
