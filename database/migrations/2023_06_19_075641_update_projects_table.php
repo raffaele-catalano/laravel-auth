@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::table('projects', function (Blueprint $table) {
             $table->string('image_path')->nullable()->after('name');
-            $table->string('image_original_name')->nullable()->after('name');
+            $table->string('image_original_name')->nullable()->after('image_path');
         });
     }
 
