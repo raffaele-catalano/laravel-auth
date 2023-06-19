@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -42,6 +43,13 @@ class ProjectController extends Controller
         $form_data = $request->all();
 
         $form_data['slug'] = Project::generateSlug($form_data['name']);
+
+        if(array_key_exists('image', $form_data)) {
+
+            $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
+
+            $form_data['image_path'] = Storage::put('uploads', $form_data['image']);
+        }
 
         $new_project = new Project();
 
@@ -91,6 +99,13 @@ class ProjectController extends Controller
             $form_data['slug'] = $project->slug;
         }
 
+        if(array_key_exists('image', $form_data)) {
+
+            $form_data['image_original_name'] = $request->file('image')->getClientOriginalName();
+
+            $form_data['image_path'] = Storage::put('uploads', $form_data['image']);
+        }
+
         $project->update(($form_data));
 
         return redirect()->route('admin.projects.show', $project);
@@ -106,6 +121,6 @@ class ProjectController extends Controller
     {
         $project->delete();
 
-        return redirect()->route('admin.projects.index')->with('deleted', "The Project -> $project->name has been succesfully deleted");
+        return redirect()->route('admin.projects.index')->with('deleted', "The Project -> $project->name <- has been succesfully deleted");
     }
 }
