@@ -26,7 +26,25 @@
                         <span>Info</span>
                     </div>
                     <div class="card-body">
-                        <h5>Number of Projects stored in <em>Database</em>: {{ $num_projects }}</h5>
+                        <h5 class="mb-4">&propto; Number of Projects stored in <em>Database</em>: {{ $num_projects }}</h5>
+
+                        <h5>&propto; Last Project added:</h5>
+                        <div class="ms-5">
+                            <div class="container mb-2">
+                                <h5 class="text-primary fw-bold">{{ $last_project->name }}
+                                    <a href="{{ route('admin.projects.show', $last_project) }}" class="btn btn-primary"><i
+                                        class="fa-solid fa-eye"></i></a>
+                                    <a href="{{ route('admin.projects.edit', $last_project) }}" class="btn btn-warning"><i
+                                        class="fa-solid fa-pencil"></i></a>
+                                </h5>
+                            </div>
+                            <div class="container mb-2">
+                                <img src="{{ asset('storage/' . $last_project->image_path) }}" alt="" class="w-25">
+                            </div>
+                            <div class="container mb-2">
+                                <p>{!! $last_project->description !!}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

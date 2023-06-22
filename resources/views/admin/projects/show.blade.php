@@ -24,6 +24,9 @@
         <a href="{{ route('admin.projects.index') }}" class="btn btn-primary mx-2">
             Back to Projects
         </a>
+        <a href="{{ route('admin.home') }}" class="btn btn-primary mx-2">
+            Back to Dashboard
+        </a>
     </div>
 
 @endsection
