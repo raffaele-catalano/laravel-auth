@@ -119,7 +119,8 @@
                 <div class="mb-3">
                     <label for="is_closed" class="form-label">Status</label>
                     <select class="form-select w-25" name="is_closed" id="is_closed">
-                        <option value="0" selected>Ongoing</option>
+                        <option value="" selected>Select a Status</option>
+                        <option value="0">Ongoing</option>
                         <option value="1">Closed</option>
                     </select>
                         @error('is_closed')
